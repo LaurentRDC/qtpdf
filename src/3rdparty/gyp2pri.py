@@ -118,7 +118,7 @@ def addDependencies(gyp, proFile, gypTarget, variables):
     for dep in gypTarget.get("dependencies") or []:
         target = None
         baseDir = None
-        for key, value in variables.iteritems():
+        for key, value in variables.items():
             name = "<(" + key + ")"
             replacement = value
             dep = dep.replace(name, replacement)
