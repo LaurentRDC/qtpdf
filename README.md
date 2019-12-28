@@ -39,7 +39,11 @@ Changes are, you don't have the right build environment on Windows. In order to 
 
 4. Build all subprojects. Make sure Debug and Release are both built. 
 
-5. Copy the resulting files in `bin`, `include`, `lib`, and `mkspecs` to the equivalent folders in the appropriate version of Qt (e.g. C:/Qt/5.14.0/msvc2017_64/). 
+5. Copy the resulting files in `bin`, `include`, `lib`, and `mkspecs` to the equivalent folders in the appropriate version of Qt (e.g. C:/Qt/5.14.0/msvc2017_64/).
+
+6. The files that you just copied will rely on relative paths. Change the paths hardcoded in files in `mkspecs` to the installation path (e.g. to C:/Qt/5.14.0/msvc2017_64/).
+
+7. Include files copied to the installation include folder (e.g. C:/Qt/5.14.0/msvc2017_64/include/) will refer to the source header files. Copy the header files from the source to the installation `include` folder until build errors stop...
 
 After this, you can use the classes defined herein by adding the following to your `.pro` file:
 
