@@ -7,7 +7,7 @@ QPdfDocument can render a PDF page to a QImage, and there is QPdfBookmarkModel w
 If you want to try it out, here's how to get started:
 
 ```bash
-git clone git://code.qt.io/qt-labs/qtpdf
+git clone https://github.com/LaurentRDC/qtpdf
 
 cd qtpdf
 git submodule update --init --recursive
@@ -20,3 +20,23 @@ make
 
 ./pdfviewer /path/to/my/file.pdf
 ```
+
+## Installing on Windows
+
+Changes are, you don't have the right build environment on Windows. In order to install on Windows, you can do the following:
+
+1. Download the source and prepare the submodules:
+
+    ```bash
+    git clone https://github.com/LaurentRDC/qtpdf
+    cd qtpdf
+    git submodule update --init --recursive
+    ```
+
+2. Open the `qtpdf.pro` file in Qt Creator. Configure the projects using the kits with which you will use QtPdf.
+
+3. Run qmake. This is important because some files are created during this phase.
+
+4. Build all subprojects. Make sure Debug and Release are both built. 
+
+5. Copy the resulting files in `bin`, `include`, `lib`, and `mkspecs` to the equivalent folders in the appropriate version of Qt (e.g. C:/Qt/5.14.0/msvc2017_64/). 
