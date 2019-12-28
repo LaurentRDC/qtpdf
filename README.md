@@ -21,7 +21,7 @@ make
 ./pdfviewer /path/to/my/file.pdf
 ```
 
-## Installing on Windows
+## Installing manually on Windows
 
 Changes are, you don't have the right build environment on Windows. In order to install on Windows, you can do the following:
 
@@ -40,3 +40,11 @@ Changes are, you don't have the right build environment on Windows. In order to 
 4. Build all subprojects. Make sure Debug and Release are both built. 
 
 5. Copy the resulting files in `bin`, `include`, `lib`, and `mkspecs` to the equivalent folders in the appropriate version of Qt (e.g. C:/Qt/5.14.0/msvc2017_64/). 
+
+After this, you can use the classes defined herein by adding the following to your `.pro` file:
+
+```
+QT += pdf pdfwidgets
+```
+
+After this, the example shown in this repository will work properly.
